@@ -1,0 +1,9 @@
+site_name: Experimental Site
+site_description: Публикация результатов экспериментов
+site_author: Ivan Pogorenko
+
+theme:
+  name: mkdocs
+
+nav:
+  - Главная: index.md
