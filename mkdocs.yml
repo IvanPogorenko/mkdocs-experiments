@@ -2,8 +2,16 @@ site_name: Experimental Site
 site_description: Публикация результатов экспериментов
 site_author: Ivan Pogorenko
 
+site_url: https://IvanPogorenko.github.io/mkdocs-experiments/
+
+use_directory_urls: false
+
 theme:
   name: mkdocs
 
 nav:
   - Главная: index.md
+  - Эксперименты: experiments.md
+  - Результаты: results.md
+  - Методика: methodology.md
+  - Лицензии: license.md
