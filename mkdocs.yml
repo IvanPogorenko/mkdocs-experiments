@@ -4,7 +4,7 @@ site_author: Ivan Pogorenko
 
 site_url: https://IvanPogorenko.github.io/mkdocs-experiments/
 
-use_directory_urls: false
+use_directory_urls: true
 
 markdown_extensions:
   - pymdownx.arithmatex:
