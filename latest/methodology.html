@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Публикация результатов экспериментов">
+        
         <meta name="author" content="Ivan Pogorenko">
-        <link rel="canonical" href="https://0564e481-a60e-48b9-8cfd-ec3fdfca58b1.selstorage.ru/1.1.6/index.html">
+        <link rel="canonical" href="https://0564e481-a60e-48b9-8cfd-ec3fdfca58b1.selstorage.ru/1.1.6/methodology.html">
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Experimental Site</title>
+        <title>Методика - Experimental Site</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/fontawesome.min.css" rel="stylesheet">
         <link href="css/brands.min.css" rel="stylesheet">
@@ -22,7 +22,7 @@
         <script>hljs.highlightAll();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand" href="index.html">Experimental Site</a>
@@ -36,7 +36,7 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a href="index.html" class="nav-link active" aria-current="page">Главная</a>
+                                <a href="index.html" class="nav-link">Главная</a>
                             </li>
                             <li class="nav-item">
                                 <a href="experiments.html" class="nav-link">Эксперименты</a>
@@ -45,7 +45,7 @@
                                 <a href="results.html" class="nav-link">Результаты</a>
                             </li>
                             <li class="nav-item">
-                                <a href="methodology.html" class="nav-link">Методика</a>
+                                <a href="methodology.html" class="nav-link active" aria-current="page">Методика</a>
                             </li>
                             <li class="nav-item">
                                 <a href="license.html" class="nav-link">Лицензии</a>
@@ -54,12 +54,12 @@
 
                     <ul class="nav navbar-nav ms-md-auto">
                             <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
+                                <a rel="prev" href="results.html" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="experiments.html" class="nav-link">
+                                <a rel="next" href="license.html" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -81,21 +81,29 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#-" class="nav-link">Исследование производительности веб-приложений</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">Методика исследования</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">Цель исследования</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">Содержание</a>
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. Подготовка среды</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">Основные параметры исследования</a>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. Параметры тестирования</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">Контрольная информация</a>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3. Используемые метрики</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4" class="nav-link">4. Порядок проведения</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5. Обеспечение достоверности</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. Ограничения</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -106,20 +114,19 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="-">Исследование производительности веб-приложений</h1>
-<p>Этот текст добавлен для проверки GitHub Actions → Selectel S3.</p>
-<p>Добро пожаловать на сайт, посвящённый проведению и документированию технических экспериментов в области веб-разработки.</p>
-<p>На этом сайте представлены примеры исследовательских материалов, методики проведения экспериментов, результаты измерений и выводы.</p>
-<h2 id="_1">Цель исследования</h2>
-<p>Изучить влияние различных подходов к обработке HTTP-запросов на производительность веб-приложений.</p>
-<h2 id="_2">Содержание</h2>
+<h1 id="_1">Методика исследования</h1>
+<p>В этом разделе описывается порядок проведения сравнительного тестирования HTTP-серверов.</p>
+<h2 id="1">1. Подготовка среды</h2>
+<p>Перед проведением экспериментов необходимо:</p>
 <ul>
-<li><strong><a href="experiments.html">Эксперименты</a></strong> — описание проведённых экспериментов и исследуемых конфигураций.</li>
-<li><strong><a href="results.html">Результаты</a></strong> — сравнительные таблицы и анализ полученных данных.</li>
-<li><strong><a href="methodology.html">Методика</a></strong> — условия проведения экспериментов и используемые метрики.</li>
-<li><strong><a href="license.html">Лицензии</a></strong> — информация о лицензировании материалов и исходного кода.</li>
+<li>подготовить тестовый сервер;</li>
+<li>установить инструмент генерации нагрузки;</li>
+<li>настроить исследуемые конфигурации;</li>
+<li>подготовить единый набор HTTP-запросов;</li>
+<li>проверить доступность тестового приложения.</li>
 </ul>
-<h2 id="_3">Основные параметры исследования</h2>
+<h2 id="2">2. Параметры тестирования</h2>
+<p>Для каждого эксперимента используются следующие параметры:</p>
 <table>
 <thead>
 <tr>
@@ -129,35 +136,80 @@
 </thead>
 <tbody>
 <tr>
-<td>Область исследования</td>
-<td>Веб-разработка</td>
+<td>Число виртуальных пользователей</td>
+<td>50</td>
 </tr>
 <tr>
-<td>Объект исследования</td>
-<td>HTTP-сервер</td>
-</tr>
-<tr>
-<td>Количество конфигураций</td>
-<td>3</td>
-</tr>
-<tr>
-<td>Количество запросов на тест</td>
+<td>Количество запросов</td>
 <td>10 000</td>
 </tr>
 <tr>
-<td>Основные метрики</td>
-<td>Время ответа, пропускная способность</td>
+<td>Тип запросов</td>
+<td>HTTP GET</td>
 </tr>
 <tr>
-<td>Среда тестирования</td>
-<td>Локальная тестовая среда</td>
+<td>Содержание ответов</td>
+<td>JSON</td>
+</tr>
+<tr>
+<td>Число повторов</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Интервал между экспериментами</td>
+<td>30 секунд</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_4">Контрольная информация</h2>
-<p>Версия материалов: 1.0</p>
-<p>Контрольная строка: <code>CONTROL-STRING-2026</code></p>
-<p>Эта строка используется для проверки корректности развёртывания сайта и получения актуальной версии HTML-документа.</p></div>
+<h2 id="3">3. Используемые метрики</h2>
+<h3 id="_2">Среднее время ответа</h3>
+<p>Среднее арифметическое времени обработки всех запросов:</p>
+<div class="arithmatex">\[
+T_{\text{avg}} = \frac{1}{N}\sum_{i=1}^{N}t_i
+\]</div>
+<p>где:</p>
+<ul>
+<li><span class="arithmatex">\(N\)</span> — количество запросов;</li>
+<li><span class="arithmatex">\(t_i\)</span> — время ответа на запрос с номером <span class="arithmatex">\(i\)</span>.</li>
+</ul>
+<h3 id="_3">Пропускная способность</h3>
+<p>Количество успешно обработанных запросов за единицу времени:</p>
+<div class="arithmatex">\[
+R = \frac{N_{\text{success}}}{t}
+\]</div>
+<p>где:</p>
+<ul>
+<li><span class="arithmatex">\(N_{\text{success}}\)</span> — количество успешных запросов;</li>
+<li><span class="arithmatex">\(t\)</span> — продолжительность тестирования в секундах.</li>
+</ul>
+<h3 id="_4">Доля ошибок</h3>
+<p>Процент запросов, завершившихся ошибкой:</p>
+<div class="arithmatex">\[
+E = \frac{N_{\text{error}}}{N_{\text{total}}}\cdot 100\%
+\]</div>
+<h2 id="4">4. Порядок проведения</h2>
+<ol>
+<li>Запустить сервер с первой конфигурацией.</li>
+<li>Выполнить тестовую нагрузку.</li>
+<li>Сохранить результаты измерений.</li>
+<li>Повторить тест ещё два раза.</li>
+<li>Переключить сервер на следующую конфигурацию.</li>
+<li>Повторить процедуру для всех конфигураций.</li>
+<li>Рассчитать средние значения метрик.</li>
+<li>Сравнить полученные результаты.</li>
+</ol>
+<h2 id="5">5. Обеспечение достоверности</h2>
+<p>Для уменьшения влияния внешних факторов необходимо:</p>
+<ul>
+<li>использовать одинаковый набор запросов;</li>
+<li>проводить тестирование в одной среде;</li>
+<li>исключать постороннюю нагрузку;</li>
+<li>выполнять несколько повторов;</li>
+<li>фиксировать версии программного обеспечения;</li>
+<li>сохранять исходные результаты измерений.</li>
+</ul>
+<h2 id="6">6. Ограничения</h2>
+<p>Представленная методика является упрощённой. В реальном исследовании следует учитывать аппаратные характеристики сервера, сетевые задержки, прогрев кэша и распределение времени ответа, включая высокие перцентили.</p></div>
             </div>
         </div>
 
@@ -218,8 +270,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.6.1
-Build Date UTC : 2026-10-06 22:33:38.363595+00:00
--->
