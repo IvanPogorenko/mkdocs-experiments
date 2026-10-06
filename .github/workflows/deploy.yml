@@ -31,11 +31,13 @@ jobs:
       - name: Build MkDocs
         run: mkdocs build --strict
 
+      # Artifact для GitHub Pages
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: site
 
+      # Artifact для Selectel S3
       - name: Upload Selectel artifact
         uses: actions/upload-artifact@v5
         with:
@@ -70,8 +72,8 @@ jobs:
 
       - name: Install AWS CLI
         run: |
-          sudo apt-get update
-          sudo apt-get install -y awscli
+          curl -fsSL https://awscli.amazonaws.com/v2/install.sh | sudo bash -s -- --system
+          aws --version
 
       - name: Deploy to Selectel S3
         env:
