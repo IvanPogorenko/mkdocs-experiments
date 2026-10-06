@@ -75,6 +75,17 @@ jobs:
           curl -fsSL https://awscli.amazonaws.com/v2/install.sh | sudo bash -s -- --system
           aws --version
 
+      - name: Install Selectel S3 certificate
+        run: |
+          mkdir -p ~/.selectels3
+          wget https://secure.globalsign.net/cacert/root-r6.crt \
+            -O ~/.selectels3/root.crt
+          openssl x509 \
+            -inform der \
+            -in ~/.selectels3/root.crt \
+            -out ~/.selectels3/root.crt
+          chmod 600 ~/.selectels3/root.crt
+
       - name: Deploy to Selectel S3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.SELECTEL_ACCESS_KEY }}
@@ -82,5 +93,5 @@ jobs:
         run: |
           aws s3 sync site/ s3://${{ vars.SELECTEL_BUCKET }}/ \
             --endpoint-url "${{ vars.SELECTEL_ENDPOINT }}" \
-            --no-verify-ssl \
+            --ca-bundle ~/.selectels3/root.crt \
             --delete
