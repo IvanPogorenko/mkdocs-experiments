@@ -2,11 +2,17 @@ site_name: Experimental Site
 site_description: Публикация результатов экспериментов
 site_author: Ivan Pogorenko
 
+site_url: https://IvanPogorenko.github.io/mkdocs-experiments/
+
 use_directory_urls: false
 
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
+
+plugins:
+  - mike:
+      alias_type: copy
 
 extra:
   version:
