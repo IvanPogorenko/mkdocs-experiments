@@ -2,9 +2,9 @@ site_name: Experimental Site
 site_description: Публикация результатов экспериментов
 site_author: Ivan Pogorenko
 
-site_url: https://IvanPogorenko.github.io/mkdocs-experiments/
+site_url: https://0564e481-a60e-48b9-8cfd-ec3fdfca58b1.selstorage.ru/
 
-use_directory_urls: true
+use_directory_urls: false
 
 markdown_extensions:
   - pymdownx.arithmatex:
