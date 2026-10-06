@@ -82,4 +82,5 @@ jobs:
         run: |
           aws s3 sync site/ s3://${{ vars.SELECTEL_BUCKET }}/ \
             --endpoint-url "${{ vars.SELECTEL_ENDPOINT }}" \
+            --no-verify-ssl \
             --delete
