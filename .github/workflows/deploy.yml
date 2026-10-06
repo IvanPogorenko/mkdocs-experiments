@@ -1,22 +1,22 @@
-name: Deploy MkDocs
+name: Deploy MkDocs versions
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -28,47 +28,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Build MkDocs
-        run: mkdocs build --strict
+      - name: Deploy version with mike
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          mike deploy --push --update-aliases "$VERSION" latest
 
-      # Artifact для GitHub Pages
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: site
-
-      # Artifact для Selectel S3
-      - name: Upload Selectel artifact
-        uses: actions/upload-artifact@v5
-        with:
-          name: mkdocs-site
-          path: site
-
-  deploy:
-    needs: build
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-  deploy-selectel:
-    needs: build
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Download site artifact
-        uses: actions/download-artifact@v6
-        with:
-          name: mkdocs-site
-          path: site
+      - name: Show published versions
+        run: |
+          mike list
 
       - name: Install AWS CLI
         run: |
@@ -91,7 +58,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.SELECTEL_ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SELECTEL_SECRET_KEY }}
         run: |
-          aws s3 sync site/ s3://${{ vars.SELECTEL_BUCKET }}/ \
+          aws s3 sync gh-pages/ s3://${{ vars.SELECTEL_BUCKET }}/ \
             --endpoint-url "${{ vars.SELECTEL_ENDPOINT }}" \
             --ca-bundle ~/.selectels3/root.crt \
             --delete
