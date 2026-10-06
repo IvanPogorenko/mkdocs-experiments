@@ -42,6 +42,12 @@ jobs:
         run: |
           mike list
 
+      - name: Checkout published gh-pages
+        run: |
+          rm -rf gh-pages
+          git fetch origin gh-pages
+          git worktree add gh-pages origin/gh-pages
+
       - name: Install AWS CLI
         run: |
           curl -fsSL https://awscli.amazonaws.com/v2/install.sh | sudo bash -s -- --system
