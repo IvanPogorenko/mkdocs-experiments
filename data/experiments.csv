@@ -1,0 +1,4 @@
+config,workers,cache,avg_ms,p95_ms,rps,errors_pct
+A,1,false,90,210,420,0.8
+B,4,false,100,130,760,0.5
+C,4,true,55,65,1450,0.2

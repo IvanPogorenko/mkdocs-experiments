@@ -20,6 +20,6 @@ theme:
 nav:
   - Главная: index.md
   - Эксперименты: experiments.md
-  - Результаты: results.md
+  - Результаты: generated/results.md
   - Методика: methodology.md
   - Лицензии: license.md

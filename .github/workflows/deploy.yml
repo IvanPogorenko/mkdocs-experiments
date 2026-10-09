@@ -18,6 +18,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Cache experiment results
+        uses: actions/cache@v4
+        with:
+          path: |
+            generated/cache.json
+            docs/assets/performance.png
+          key: experiments-${{ hashFiles('data/experiments.csv', 'data/version.txt') }}
+
       - name: Setup Python
         uses: actions/setup-python@v6
         with:
@@ -27,6 +35,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Process experiment data
+        run: python scripts/process_experiments.py
 
       - name: Build MkDocs
         run: mkdocs build --strict

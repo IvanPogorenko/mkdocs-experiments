@@ -1,0 +1,38 @@
+{
+  "fingerprint": "1a34edc2cb7ef3e7117ca05a2157f92474ccd526c29ebb64a90c99f4b1832742",
+  "rows": [
+    {
+      "config": "A",
+      "workers": 1,
+      "cache": "false",
+      "avg_ms": 90.0,
+      "p95_ms": 210.0,
+      "rps": 420.0,
+      "errors_pct": 0.8,
+      "time_reduction_pct": 0.0,
+      "throughput_growth_pct": 0.0
+    },
+    {
+      "config": "B",
+      "workers": 4,
+      "cache": "false",
+      "avg_ms": 100.0,
+      "p95_ms": 130.0,
+      "rps": 760.0,
+      "errors_pct": 0.5,
+      "time_reduction_pct": -11.1,
+      "throughput_growth_pct": 81.0
+    },
+    {
+      "config": "C",
+      "workers": 4,
+      "cache": "true",
+      "avg_ms": 55.0,
+      "p95_ms": 65.0,
+      "rps": 1450.0,
+      "errors_pct": 0.2,
+      "time_reduction_pct": 38.9,
+      "throughput_growth_pct": 245.2
+    }
+  ]
+}
